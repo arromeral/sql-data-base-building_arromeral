@@ -63,4 +63,5 @@ It can be useful to send a return reminder to these customers).
 - **"customer_penalties"**: This query calculates customer penalties, based on the sum of the replacement rate for lost movies and proposing a system of penalties for delays based on the days of delay and the rate of the item.
 - **"actor_films"**: This Querie returns all the movies in the database in which a specific actor appears.
 - **"film_cast"**: This Query returns the cast of a specific movie from the database.
-- **"film_inventory"**:
+- **"film_inventory"**: This Query returns the inventory status of a certain film, that is, the number of units available in each store.
+- **"actor_film_inventory"**: Similar to the previous one but returning the inventory status of all the films in which a certain actor appears.
