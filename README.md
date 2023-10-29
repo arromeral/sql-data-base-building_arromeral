@@ -6,7 +6,7 @@
 ## Description
 The project consists of the creation of a SQL database for the reopening of a video club business. The starting point for this consist in seven *csv* documents provided by the client that include inventory data, records of past rentals, movies, actors, film categories and languages, among others.
 
-The objective of the project is to try to build a database sufficiently optimized to allow the client to start the business, being able to keep record of rentals, inventory status, customer data and history, as well as the employees stats. I will also try to offer a series of queries that allow employees to search for relevant information about the movies in the inventory.
+The objective of the project is to try to build a database sufficiently optimized to allow the client to start the business, being able to keep record of rentals, inventory status, customer data and history, as well as the employees stats. I will also try to offer a series of queries that allow staff to search for relevant information about the movies in the inventory.
 ## Contents
 The contents of the project are as follows:
 - [**data**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/data): 
