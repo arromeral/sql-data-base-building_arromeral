@@ -1,11 +1,16 @@
 # 🎬📼SQL Database building project - Blockbust📼🎬
-![blockbust](https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e6033b62-f4fe-4eab-a36c-552663bc037d)
+![blockbust](https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e1388a83-52fb-4cae-a04a-c2959588a5bd)
+
 ## Description
 The project consists of the creation of a SQL database for the reopening of a video club business. The starting point for this consist in seven *csv* documents provided by the client that include inventory data, records of past rentals, movies, actors, film categories and languages, among others.
 
 The objective of the project is to try to build a database sufficiently optimized to allow the client to start the business, being able to keep a record of rentals, inventory status, customer data and history, as well as the employees. I will also try to offer a series of queries that allow employees to search for relevant information about the movies in the inventory.
 ## Contents
 The contents of the project are as follows:
+- [**data**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/data): Folder with all the *csv* files used, both those provided by the client, as well as those cleaned and generated to load data to mySQL.
+- [**images**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/images): Folder with the images used in this document
+- [**sql**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/sql): Folder with the SQL document for importing the database, and the rest of the SQL queries created to use the database.
+- [**src**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/src): Folder with the Jupyter Notebooks used to analyze and clean the data provided by the client
 ## Methodology & Results
 ### Understanding & Cleaning stage:
 The first stage of the project has been dedicated to understanding the data provided by the client, and trying to organize it to understand the structure of the business. Once the relationships between the data has been outlined, it has been cleaned with the aim of adapting it to the final structure of the database.
@@ -23,7 +28,8 @@ The work done can be seen in the different Jupyter Notebooks in the src folder. 
   - Once the dataframe has all the possible actor-movie records found, the rest of the columns have been deleted so that this table can be reused as a *many-to-many* relationship (equivalent to the cast of a movie) between actors and movies in SQL .
 ### Database final structure - EER Diagram:
 The final structure of the database can be seen through the following EER Diagram.
-![EER Diagram](*https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/fbc26ff1-ec64-4ba9-9f8e-26204997db9f)
+![EER Diagram](https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/ad05010e-8aa1-4c49-ad4e-a5262e603458)
+
 
 In addition to the work done in **pandas**, three new tables have been added directly in mySQL, one with store data (in this case 2, which are the ones that appear in the inventory records), and the other two with dummy employees and clients to be able to check the operation of the Database. To create the dummy data, the **Faker** python library has been used, as can be seen in the document *name_generator*.
 
@@ -41,18 +47,18 @@ The structure of the database is designed to minimize manual data entry by emplo
 The core business workflow is as follows:
 - A client rents a movie -> A record is generated in the *rented* table with the data of the client, the employee and the inventory id of the item.
   
-  <*img width="572" alt="new_rental" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/0cfd49d6-1148-49f4-ab8c-63d44a597ad7">
+  <img width="572" alt="new_rental" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/b5d8f0d7-14d7-46ee-8198-ae04efadd3a9">
 - Employees update the *rented* table periodically to update the status of the rentals, especially the days remaining for each rental in progress.
 
-  <*img width="587" alt="update_rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e47ec452-5676-4b38-b1a1-560b6c3b4abf">
+<img width="587" alt="update_rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/4ce22eaf-d529-4010-bfb3-71b165ee266d">
+
 - The client returns the movie or declares it lost -> The employee updates the rental record in the *rented* table, updating its status and the return date.
 
-<*img width="602" alt="update_rental_status" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e0d4536f-4f2a-4e83-880e-5e144fb73575">
+<img width="602" alt="update_rental_status" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a74da488-774f-442d-84bf-352e6d51d807">
 
 The rental table once the business is operational should look like this:
 
-<img width="560" alt="rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/27ebb4d9-1503-4131-b146-2a5b7758d2ae">
-
+<img width="560" alt="rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a77ca233-61b6-4dd0-942e-2573c87a8a7f">
 
 Additionally, a series of QUERIES have been created that allow staff to obtain information about clients, or facilitate the search for information in the Database in response to hypothetical queries made by clients.
 - **"customer_expenses"**: This query returns a table with the total expenses of customers in the business in descending order of expense (It can be useful when offering promotions or discounts to the best customers).
