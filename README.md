@@ -1,6 +1,7 @@
 # 🎬📼SQL Database building project - Blockbust📼🎬
-
-![blockbust](https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e1388a83-52fb-4cae-a04a-c2959588a5bd#center)
+<center>
+    <img src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e1388a83-52fb-4cae-a04a-c2959588a5bd">
+</center>
 
 ## Description
 The project consists of the creation of a SQL database for the reopening of a video club business. The starting point for this consist in seven *csv* documents provided by the client that include inventory data, records of past rentals, movies, actors, film categories and languages, among others.
