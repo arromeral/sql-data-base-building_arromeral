@@ -25,3 +25,11 @@ The work done can be seen in the different Jupyter Notebooks in the src folder. 
 The final structure of the database can be seen through the following EER Diagram.
 ![EER Diagram](https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/fbc26ff1-ec64-4ba9-9f8e-26204997db9f)
 
+In addition to the work done in **pandas**, three new tables have been added directly in mySQL, one with store data (in this case 2, which are the ones that appear in the inventory records), and the other two with dummy employees and clients to be able to check the operation of the Database. To create the dummy data, the **Faker** python library has been used, as can be seen in the document *name_generator*.
+
+Three new columns have also been included in the rental table:
+- **"status":** indicating the status of the rental ("Rented", "Returned" or "Lost")
+- **"rental duration":** which includes the maximum duration in days for that film.
+- **"days left":** column that is updated daily as long as the movie has not been returned or declared lost, and that counts the remaining days of rental. Accepts negative values ​​to record rentals with late returns.
+  
+A new column **"availability"** has also been added to the *inventory* table, which accepts the values ​​"Available" and "Not available" depending on the status of the movie in the *rental* table. This column will be updated by **Triggers** when records are updated or generated in *rental*.
