@@ -7,10 +7,16 @@ The project consists of the creation of a SQL database for the reopening of a vi
 The objective of the project is to try to build a database sufficiently optimized to allow the client to start the business, being able to keep record of rentals, inventory status, customer data and history, as well as the employees. I will also try to offer a series of queries that allow employees to search for relevant information about the movies in the inventory.
 ## Contents
 The contents of the project are as follows:
-- [**data**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/data): Folder with all the *csv* files used, both those provided by the client, as well as those cleaned and generated to load data to mySQL.
-- [**images**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/images): Folder with the images used in this document
+- [**data**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/data): 
+   - [**original_info**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/data/original_info): Folder with all the *csv* files provided by the client.
+   - [**cleaned_and_additional_info**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/data/cleaned_and_additional_info): Folder with all the *csv* files cleaned and generated to load data to mySQL.
+- [**images**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/images): Folder with the images used in this document.
 - [**sql**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/sql): Folder with the SQL document for importing the database, and the rest of the SQL queries created to use the database.
-- [**src**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/src): Folder with the Jupyter Notebooks used to analyze and clean the data provided by the client
+   - [**core_workflow_queries**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/sql/core_workflow_queries): Folder with the main queries of the core business workflow.
+   - [**additional_queries**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/sql):Folder with other queries of interest generated to the business.
+   - [**blockbust.mwb**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/blockbust.mwb): File with the EER Diagram.
+   - [**blockbust.sql**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/blockbust.mwb) : File to import the Database.
+- [**src**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/src): Folder with the Jupyter Notebooks used to analyze and clean the data provided by the client.
 ## Methodology & Results
 ### Understanding & Cleaning stage:
 The first stage of the project has been dedicated to understanding the data provided by the client, and trying to organize it to understand the structure of the business. Once the relationships between the data has been outlined, it has been cleaned with the aim of adapting it to the final structure of the database.
@@ -21,7 +27,7 @@ The work done can be seen in the different Jupyter Notebooks in the src folder. 
 
 - All the tables contained a "Last update" column, in this case, these columns have been eliminated except for the "rental" and "inventory" tables.
 - The rental table contained rental records from the time the business was operational many years ago, and referenced customers and inventory ids that no longer exists, so it was decided to empty the table so it could be used to track new records once the business becomes operational.
-- The file *old_HDD.csv* contained records that related actors to their movies, and these to their categories. Although some of the films are not in the inventory, and perhaps not all the films are included in the *film.csv* file, this file has been used extensively to obtain the following relationships:
+- The file *old_HDD.csv* contained records that related actors to their movies, and these to their categories. Although some of the films are not in the inventory, and perhaps not all the films are included in the *film.csv* file, this file has been used extensively in the [**ajuste_tablas**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/src/ajuste_tablas.ipynb) Jupyter Notebook to obtain the following relationships :
   - Crossing the data with the actors Dataframe, a new column has been added with the actor id.
   - In a similar way to the actors, a column has been added with the id of the movies crossing the Dataframe with the movies.
   - Taking advantage of the fact that the Dataframe includes the category column, a column has been added to the *film* Dataframe with the id of its category. A new category "Unknown" has also been added to the Dataframe *categories* for those cases in which the movie was not found on *old_HDD*.
