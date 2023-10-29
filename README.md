@@ -81,3 +81,5 @@ Additionally, a series of QUERIES have been created that allow staff to obtain i
 - **"film_cast"**: This Query returns the cast of a specific movie from the database.
 - **"film_inventory"**: This Query returns the inventory status of a certain film, that is, the number of units available in each store.
 - **"actor_film_inventory"**: Similar to the previous one but returning the inventory status of all the films in which a certain actor appears.
+
+## Future works and additions
