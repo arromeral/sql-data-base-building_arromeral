@@ -54,14 +54,14 @@ A new column **"availability"** has also been added to the *inventory* table, wh
 The structure of the database is designed to minimize manual data entry by employees and simplify the number of tasks while maintaining the rigor, consistency and updating of the data as much as possible.
 
 The core business workflow is as follows:
-- A client rents a movie -> A record is generated in the *rented* table with the data of the client, the employee and the inventory id of the item.
+- A client rents a movie -> A record is generated in the *rental* table with the data of the client, the employee and the inventory id of the item.
   
   <img width="572" alt="new_rental" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/b5d8f0d7-14d7-46ee-8198-ae04efadd3a9">
-- Employees update the *rented* table periodically to update the status of the rentals, especially the days remaining for each rental in progress.
+- Employees update the *rental* table periodically to update the status of the rentals, especially the days remaining for each rental in progress.
 
 <img width="587" alt="update_rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/4ce22eaf-d529-4010-bfb3-71b165ee266d">
 
-- The client returns the movie or declares it lost -> The employee updates the rental record in the *rented* table, updating its status and the return date.
+- The client returns the movie or declares it lost -> The employee updates the rental record in the *rental* table, updating its status and the return date.
 
 <img width="602" alt="update_rental_status" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a74da488-774f-442d-84bf-352e6d51d807">
 
@@ -76,7 +76,7 @@ Additionally, a series of QUERIES have been created that allow staff to obtain i
 *May be necessary to cancel the membership of undesirable clients*).
 - **"customer_current_delays"**: Keeps track of customers with ongoing rentals that have exceeded the maximum rental days. Also return the client's phone number and email(
 *It can be useful to send a return reminder to these customers*).
-- **"customer_penalties"**: This query calculates customer penalties, based on the sum of the replacement rate for lost movies and proposing a system of penalties for delays based on the days of delay and the rate of the item.
+- **"customer_penalties"**: This query calculates customer penalties, based on the sum of the replacement rate for lost movies and suggests a system of penalties for delays based on the days of delay and the rate of the item.
 - **"actor_films"**: This Querie returns all the movies in the database in which a specific actor appears.
 - **"film_cast"**: This Query returns the cast of a specific movie from the database.
 - **"film_inventory"**: This Query returns the inventory status of a certain film, that is, the number of units available in each store.
