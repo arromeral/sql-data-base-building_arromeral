@@ -6,7 +6,7 @@ The project consists of the creation of a SQL database for the reopening of a vi
 The objective of the project is to try to build a database sufficiently optimized to allow the client to start the business, being able to keep a record of rentals, inventory status, customer data and history, as well as the employees. I will also try to offer a series of queries that allow employees to search for relevant information about the movies in the inventory.
 ## Contents
 The contents of the project are as follows:
-## Methodology
+## Methodology & Results
 ### Understanding & Cleaning stage:
 The first stage of the project has been dedicated to understanding the data provided by the client, and trying to organize it to understand the structure of the business. Once the relationships between the data has been outlined, it has been cleaned with the aim of adapting it to the final structure of the database.
 
