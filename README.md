@@ -57,7 +57,7 @@ The core business workflow is as follows:
 - A client rents a movie -> A record is generated in the *rental* table with the data of the client, the employee and the inventory id of the item.
   
   <img width="572" alt="new_rental" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/b5d8f0d7-14d7-46ee-8198-ae04efadd3a9">
-- Employees update the *rental* table periodically to update the status of the rentals, especially the days remaining for each rental in progress.
+- Employees update the *rental* table periodically to update the status of the rentals, especially the days remaining for each rental in progress or after each new rent.
 
 <img width="587" alt="update_rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/4ce22eaf-d529-4010-bfb3-71b165ee266d">
 
@@ -69,6 +69,12 @@ The rental table once the business is operational should look like this:
 
 <img width="560" alt="rental_table" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a77ca233-61b6-4dd0-942e-2573c87a8a7f">
 
+Furthermore, it would be interesting if once a new rental was generated, the status of the item would be updated in the "inventory" table to "Not available", and also when a movie was returned it would change again to "Available". To do this, two "Triggers" have been created, which are automations that are activated automatically when a certain action occurs, such as a new **insert** in rental or an **update** in a row of "rental.
+
+These two triggers are the following:
+
+-  [**trigger_new_rental**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/core_workflow_queries/trigger_new_rental.sql): Changes the item's inventory status to "Not available" when it is rented
+-  [**trigger_return_change_inventory**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/core_workflow_queries/trigger_return_change_inventory.sql): Changes the item's inventory status to "Available" when the film is returned.
 
 Additionally, a series of QUERIES have been created that allow staff to obtain information about clients, or facilitate the search for information in the Database in response to hypothetical queries made by clients:
 - **"customer_expenses"**: This query returns a table with the total expenses of customers in the business in descending order of expense (*It can be useful when offering promotions or discounts to the best customers*).
