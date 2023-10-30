@@ -78,14 +78,32 @@ These two triggers are the following:
 
 Additionally, a series of QUERIES have been created that allow staff to obtain information about clients, or facilitate the search for information in the Database in response to hypothetical queries made by clients:
 - **"customer_expenses"**: This query returns a table with the total expenses of customers in the business in descending order of expense (*It can be useful when offering promotions or discounts to the best customers*).
+
+  <img width="259" alt="customer expenses" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/0b9edc9b-aacd-4c42-b969-97e8cd2b0ffe">
+
 - **"customer_days_delayed"**: This query keeps track of the total days of accumulated delays in returns for each customer (
 *May be necessary to cancel the membership of undesirable clients*).
 - **"customer_current_delays"**: Keeps track of customers with ongoing rentals that have exceeded the maximum rental days. Also return the client's phone number and email(
 *It can be useful to send a return reminder to these customers*).
+
+<img width="415" alt="current_delays" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/d34ca330-cb62-421e-a41b-8494d995a596">
+
 - **"customer_penalties"**: This query calculates customer penalties, based on the sum of the replacement rate for lost movies and suggests a system of penalties for delays based on the days of delay and the rate of the item.
+  
+<img width="383" alt="total penalties" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a7ff2d39-1237-4bde-bb45-be196a7c3335">
+
 - **"actor_films"**: This Querie returns all the movies in the database in which a specific actor appears.
 - **"film_cast"**: This Query returns the cast of a specific movie from the database.
 - **"film_inventory"**: This Query returns the inventory status of a certain film, that is, the number of units available in each store.
+
+  <img width="262" alt="film_inventory" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/15d3ab5d-c519-44c3-93e6-5f23ebe68af8">
+
 - **"actor_film_inventory"**: Similar to the previous one but returning the inventory status of all the films in which a certain actor appears.
 
 ## Future works and additions
+Below, a series of additions and improvements are proposed to enrich the project and that may be implemented in the future:
+
+- A system to prevent a customer with currently overdue movies or unpaid penalties from renting.
+- Some queries to keep track of employee productivity.
+- Automation of the file of rental records closed in another table differentiated from rental.
+- Query to get suggested movies based on the latest movies rented by a customer.
