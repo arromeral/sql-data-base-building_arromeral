@@ -17,7 +17,7 @@ The contents of the project are as follows:
    - [**core_workflow_queries**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/sql/core_workflow_queries): Folder with the main queries of the core business workflow.
    - [**additional_queries**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/sql):Folder with other queries of interest generated to the business.
    - [**blockbust.mwb**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/blockbust.mwb): File with the EER Diagram.
-   - [**blockbust.sql**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/blockbust.mwb) : File to import the Database.
+   - [**blockbust.sql**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/blockbust.sql) : File to import the Database.
 - [**src**](https://github.com/arromeral/sql-data-base-building_arromeral/tree/main/src): Folder with the Jupyter Notebooks used to analyze and clean the data provided by the client.
 ## Methodology & Results
 ### Understanding & Cleaning stage:
@@ -76,7 +76,7 @@ These two triggers are the following:
 -  [**trigger_new_rental**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/core_workflow_queries/trigger_new_rental.sql): Changes the item's inventory status to "Not available" when it is rented
 -  [**trigger_return_change_inventory**](https://github.com/arromeral/sql-data-base-building_arromeral/blob/main/sql/core_workflow_queries/trigger_return_change_inventory.sql): Changes the item's inventory status to "Available" when the film is returned.
 
-Additionally, a series of QUERIES have been created that allow staff to obtain information about clients, or facilitate the search for information in the Database in response to hypothetical queries made by clients:
+Additionally, a series of **QUERIES** have been created that allow staff to obtain information about clients, or facilitate the search for information in the Database in response to hypothetical queries made by clients:
 - **"customer_expenses"**: This query returns a table with the total expenses of customers in the business in descending order of expense (*It can be useful when offering promotions or discounts to the best customers*).
 
   <img width="259" alt="customer expenses" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/0b9edc9b-aacd-4c42-b969-97e8cd2b0ffe">
