@@ -83,6 +83,9 @@ Additionally, a series of QUERIES have been created that allow staff to obtain i
 
 - **"customer_days_delayed"**: This query keeps track of the total days of accumulated delays in returns for each customer (
 *May be necessary to cancel the membership of undesirable clients*).
+
+<img width="242" alt="cust_days_delayed" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a837584f-37c1-4e2d-b049-a34e6d72a5fe">
+
 - **"customer_current_delays"**: Keeps track of customers with ongoing rentals that have exceeded the maximum rental days. Also return the client's phone number and email(
 *It can be useful to send a return reminder to these customers*).
 
@@ -93,12 +96,22 @@ Additionally, a series of QUERIES have been created that allow staff to obtain i
 <img width="383" alt="total penalties" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/a7ff2d39-1237-4bde-bb45-be196a7c3335">
 
 - **"actor_films"**: This Querie returns all the movies in the database in which a specific actor appears.
+
+  <img width="216" alt="actor_film" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/d0607604-0489-47cb-9220-a0f1bd42fc7a">
+
 - **"film_cast"**: This Query returns the cast of a specific movie from the database.
+
+
+<img width="191" alt="film_cast" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/3bbf5388-16ce-40bd-9dfd-9a8d350a8ff2">
+
 - **"film_inventory"**: This Query returns the inventory status of a certain film, that is, the number of units available in each store.
 
   <img width="262" alt="film_inventory" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/15d3ab5d-c519-44c3-93e6-5f23ebe68af8">
 
 - **"actor_film_inventory"**: Similar to the previous one but returning the inventory status of all the films in which a certain actor appears.
+
+  <img width="318" alt="actor_inventory" src="https://github.com/arromeral/sql-data-base-building_arromeral/assets/138980560/e3b1f86f-20db-4690-8d2a-81c64db53d94">
+
 
 ## Future works and additions
 Below, a series of additions and improvements are proposed to enrich the project and that may be implemented in the future:
